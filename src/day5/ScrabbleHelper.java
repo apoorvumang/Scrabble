@@ -8,7 +8,7 @@ class ScrabbleHelper
 	public Map <String, AnagramListStructure> anagramMap;
 	
 	ScrabbleHelper() throws IOException
-	{
+	{	private static final Character INITIAL_CHARACTER = 'A';
 		anagramMap = new HashMap<String, AnagramListStructure>();
 		File file = new File("C:\\sowpods.txt");
 		BufferedReader br = new BufferedReader(new FileReader(file));
