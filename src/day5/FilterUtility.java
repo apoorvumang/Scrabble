@@ -97,27 +97,5 @@ public static boolean matchUserRequest(String regx, String candidate) {
 	
 	
 	
-public static Map<String,Integer> filterAndAddConstraintGap( HashMap<String,Integer> mapOfPossibleWordsWithScores, char first, char second, int gap){
 
-     Map<String,Integer> retMap= new HashMap<String,Integer>();
-     Set<String> wordsSet =mapOfPossibleWordsWithScores.keySet();
-	 for(String word:wordsSet ){
-	     int i=0;
-	     for(char c:word.toCharArray()){
-		     if(c==first){
-			     if(word.length()>i+gap+1){
-				    if(word.charAt(i+gap+1)==second)
-					  retMap.put(word,mapOfPossibleWordsWithScores.get(word));
-				  }
-				
-			   }
-		 
-		     i++;
-		 }
-	 
-	 }
-
-
-return retMap;
-}
 }
