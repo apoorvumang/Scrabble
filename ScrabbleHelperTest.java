@@ -13,6 +13,13 @@ public class ScrabbleHelperTest {
 	}
 	
 	@Test
+	public void scrabbleTestforNullString() {
+		ScrabbleHelper scrabble = new ScrabbleHelper();
+		String sortedWord=scrabble.calculateKey("");
+		assertEquals("", sortedWord);
+	}
+	
+	@Test
 	public void scoreTest() {
 		ScrabbleHelper list = new ScrabbleHelper();
 		int score = list.calculateScore("zumba");
