@@ -25,6 +25,12 @@ public class ScrabbleHelperTest {
 		assertEquals("test  ", sortedWord);
 	}
 	
+	public void scrabbleTestofSortedString() {
+		ScrabbleHelper scrabble = new ScrabbleHelper();
+		String sortedWord=scrabble.calculateKey("aaaa");
+		assertEquals("aaaa", sortedWord);
+	}
+	
 	@Test
 	public void scoreTest() {
 		ScrabbleHelper list = new ScrabbleHelper();
