@@ -19,6 +19,12 @@ public class ScrabbleHelperTest {
 		assertEquals("", sortedWord);
 	}
 	
+	public void scrabbleTestforStringwithSpace() {
+		ScrabbleHelper scrabble = new ScrabbleHelper();
+		String sortedWord=scrabble.calculateKey("  test  ");
+		assertEquals("test  ", sortedWord);
+	}
+	
 	@Test
 	public void scoreTest() {
 		ScrabbleHelper list = new ScrabbleHelper();
