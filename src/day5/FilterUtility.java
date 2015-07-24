@@ -25,7 +25,7 @@ public class FilterUtility
     
      
      List<Word> words = PrinterUtility.sortWordsByRank(retMap);
-     PrinterUtility.printWords(words);
+     PrinterUtility.printWords(words,3);
      
 	}
 	
