@@ -9,4 +9,11 @@ public class ScrabbleHelperTest {
 		String sortedWord=scrabble.calculateKey("zumba");
 		assertEquals("Correct", "abmuz", sortedWord);
 	}
+	
+	@Test
+	public void scoreTest() {
+		ScrabbleHelper list = new ScrabbleHelper();
+		int score = list.calculateScore("zumba");
+		assertEquals("Correct", 18, score);
+	}
 }
