@@ -23,7 +23,8 @@ public class PrinterUtility {
       public static void printWords(List<Word> sortedWWords,int limiter){
     	
     	 
-    	  for(int i=0;i<limiter;++i){
+    	  for(int i=0;i<limiter&&i<sortedWWords.size();++i){
+    		 
     		 Word w= sortedWWords.get(i);
     	  System.out.println(w.value+" "+w.score);
     	 
