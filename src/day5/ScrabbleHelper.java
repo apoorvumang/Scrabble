@@ -30,6 +30,9 @@ class ScrabbleHelper
 		br.close();
 	}
 	
+	public HashMap<String, AnagramListStructure> getMap() {
+		return anagramMap;
+	}
 	public String calculateKey(String word)
 	{
         char[] charsInWord = word.toCharArray();
