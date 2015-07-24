@@ -5,12 +5,12 @@ import java.io.*;
 
 public class Scrabble {
 
-  public TreeMap<Integer, String> wordsWithScore;
+  public HashMap<String, Integer> wordsWithScore;
 
   public static void main(String[] args) throws IOException
   {
-	String input = "tap";
-	String constraint = "*c*";
+	String input = "hl*el";
+	String constraint = "*";
 	input = ScrabbleHelper.constructInput(input, constraint);
     ScrabbleHelper scrabbleHelper = new ScrabbleHelper();
     Scrabble scrabble = new Scrabble();
@@ -18,18 +18,17 @@ public class Scrabble {
     for(String combination: c.combinations) {
     	if(scrabbleHelper.isValidWord(combination)) {
     		int score = ScrabbleHelper.calculateScore(combination);
-    		String concatenatedString = new String();
     		for (String possibleWord: scrabbleHelper.getAnagramList(combination)) {
-    			if (FilterUtility.matchUserRequest(constraint, possibleWord))
-    				concatenatedString += " " + possibleWord;
+    			if (FilterUtility.matchUserRequest(constraint, possibleWord)) {
+    				scrabble.wordsWithScore.put(possibleWord, score);
+    			}
     		}
-    		if(concatenatedString.length() > 0)
-    			scrabble.wordsWithScore.put(score, concatenatedString);
     	}
     }
-    System.out.println(scrabble.wordsWithScore.descendingMap());
+ 	List<Word> words = PrinterUtility.sortWordsByRank(scrabble.wordsWithScore);
+ 	PrinterUtility.printWords(words);
   }
   Scrabble() {
-	  wordsWithScore = new TreeMap<Integer, String>();
+	  wordsWithScore = new HashMap<String, Integer>();
   }
 }
