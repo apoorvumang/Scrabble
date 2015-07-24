@@ -18,13 +18,15 @@ public class FilterUtility
 		hm.put("hellboy",13);
 		hm.put("asdheat",15);
 		hm.put("sadfedfoasdf",15);
+		hm.put("asdf",10);
 		
-	 Map<String,Integer> retMap=	filterwordsWithRegex(hm,"h..l*");
+	 Map<String,Integer> retMap=	filterwordsWithRegex(hm,"*");
 	 
-     Set<String> wordSet =retMap.keySet();
-     for( String s:wordSet){
-     	System.out.println(s+" "+retMap.get(s));
-     }
+    
+     
+     List<Word> words = PrinterUtility.sortWordsByRank(retMap);
+     PrinterUtility.printWords(words);
+     
 	}
 	
 
