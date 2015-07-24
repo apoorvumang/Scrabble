@@ -6,7 +6,12 @@ import java.io.*;
 public class Scrabble {
   public static void main(String[] args) throws IOException
   {
+	  
+	String input = "abck";
     ScrabbleHelper scrabbleHelper = new ScrabbleHelper();
-    System.out.println(scrabbleHelper.anagramMap.size());
+    Combinations c = new Combinations(input);
+//    System.out.println(scrabbleHelper.anagramMap.size());
+    
+    
   }
 }

@@ -7,9 +7,15 @@ class ScrabbleHelper
 {
 	public Map <String, AnagramListStructure> anagramMap;
 	
+	public boolean isValidWord(String s){
+    	char[] arr = s.toCharArray();
+    	Arrays.sort(arr);
+    	return anagramMap.containsKey(arr.toString());
+    }
+    	
+	
 	ScrabbleHelper() throws IOException
 	{	
-		
 		anagramMap = new HashMap<String, AnagramListStructure>();
 		File file = new File("C:\\sowpods.txt");
 		BufferedReader br = new BufferedReader(new FileReader(file));
@@ -29,6 +35,7 @@ class ScrabbleHelper
 		}
 		br.close();
 	}
+	
 	
 	public String calculateKey(String word)
 	{
