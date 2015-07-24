@@ -6,27 +6,23 @@ class AnagramListStructure{
 	List<String> anagramList;
 	int score;
 	
-	int calculateScore(int word){
-		int score[] = new int[]{1,3,3,2,1,4,2,4,1,8,10,1,2,1,1,3,8,1,1,1,1,4,10,10,10,10};
-    	int wordScore = 0;
-    	int countOfLettersInWord[] = 
-    	for(int i=0;i < countOfLettersInWord.length - 1;i++) {
-    		wordScore += score[i] * countOfLettersInWord[i];
-    	}
-    	return wordScore;
-	}
+	public static int calculateScore(String word){
+		int eachCharacterScore[] = { 1, 2, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1,
+					1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10 };
+			int score = 0;
+			char[] characterArray = word.toCharArray();
 
-	private int[] countLetters(String word){
-		int countOfLettersInWord[] = new int[26];
-		for(int i=0;i<word.length();i++) {
-			countOfLettersInWord[Character.toLowerCase(word.charAt(i)) - 'a']++;
+			for (int i = 0; i < characterArray.length; i++) {
+				score += eachCharacterScore[Character
+						.toUpperCase(characterArray[i]) - 'A'];
+			}
+			
+			return score;
 		}
-		return countOfLettersInWord;	
-	}
     	
 	AnagramListStructure(String word)
 	{
-		score = ScrabbleHelper.calculateScore(word);
+		score = calculateScore(word);
 		anagramList = new ArrayList<String>();
 		anagramList.add(word);
 	}
