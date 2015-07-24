@@ -7,6 +7,14 @@ class ScrabbleHelper
 {
 	public Map <String, AnagramListStructure> anagramMap;
 	
+	public static String constructInput(String input, String constraint) {
+		for(Character c : constraint.toCharArray()) {
+			if(c >= 'a' && c <= 'z')
+				input += c;
+		}
+		return input;
+	}
+	
 	public boolean isValidWord(String word){
     	return anagramMap.containsKey(calculateKey(word.toLowerCase()));
     }
@@ -36,7 +44,7 @@ class ScrabbleHelper
 		while(word != null) {
 			String key = calculateKey(word);
 			AnagramListStructure anagramListStructure;
-			if(anagramMap.containsKey(word)){
+			if(anagramMap.containsKey(key)){
 				anagramListStructure = anagramMap.get(key);
 				anagramListStructure.anagramList.add(word);
 			}
