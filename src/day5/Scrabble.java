@@ -9,8 +9,13 @@ public class Scrabble {
 
   public static void main(String[] args) throws IOException
   {
-	String input = "hl*el";
-	String constraint = "*";
+	
+	if(args.length != 2) {
+		System.out.println("Give rack and constraint as input");
+		System.exit(1);
+	}
+	String input = args[0];
+	String constraint = args[1];
 	input = ScrabbleHelper.constructInput(input, constraint);
     ScrabbleHelper scrabbleHelper = new ScrabbleHelper();
     Scrabble scrabble = new Scrabble();

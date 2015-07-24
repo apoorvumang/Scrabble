@@ -20,9 +20,13 @@ public class PrinterUtility {
 
 		 return words;
 	 }
-      public static void printWords(List<Word> sortedWWords){
-    	  for(Word w:sortedWWords){
+      public static void printWords(List<Word> sortedWWords,int limiter){
+    	
+    	 
+    	  for(int i=0;i<limiter;++i){
+    		 Word w= sortedWWords.get(i);
     	  System.out.println(w.value+" "+w.score);
+    	 
     	  }
       }
 }
