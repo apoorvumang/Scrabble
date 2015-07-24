@@ -66,6 +66,10 @@ public static void main(String [] args){
 	Scanner rack = new Scanner(System.in);
 	tiles = rack.nextLine();
 	Combinations obj = new Combinations(tiles);
+	Set<String> keys = obj.combinations.keySet();
+	for (String key : keys) {
+	    System.out.println(key);
+	}
 	
 	
 }
