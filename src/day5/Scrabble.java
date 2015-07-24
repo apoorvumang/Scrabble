@@ -31,7 +31,7 @@ public class Scrabble {
     	}
     }
  	List<Word> words = PrinterUtility.sortWordsByRank(scrabble.wordsWithScore);
- 	PrinterUtility.printWords(words);
+ 	PrinterUtility.printWords(words, 10);
   }
   Scrabble() {
 	  wordsWithScore = new HashMap<String, Integer>();
