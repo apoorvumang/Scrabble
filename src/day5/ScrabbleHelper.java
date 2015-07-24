@@ -48,8 +48,7 @@ class ScrabbleHelper
 		}
 		br.close();
 	}
-	
-	
+
 	public String calculateKey(String word)
 	{
         char[] charsInWord = word.toCharArray();
@@ -58,6 +57,4 @@ class ScrabbleHelper
         return sortedWord;		
 	}
 		
-	
-
 }
