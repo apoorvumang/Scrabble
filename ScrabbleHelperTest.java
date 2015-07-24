@@ -1,5 +1,12 @@
-import java.test.*;
+import static org.junit.Assert.*;
+import org.junit.day5;
 
-class ScrabbleHelperTest{
+public class ScrabbleHelperTest {
 
+	@Test
+	public void scrabbleTest() {
+		ScrabbleHelper scrabble = new ScrabbleHelper();
+		String sortedWord=scrabble.calculateKey("zumba");
+		assertEquals("Correct", "abmuz", sortedWord);
+	}
 }
