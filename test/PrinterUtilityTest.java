@@ -10,15 +10,16 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class PrinterUtilityTest {
 
-	public void PrintTest(){
+public class PrinterUtilityTest {
+	@Test
+	public void testsortWordsByRank(){
 		PrinterUtility pu=new PrinterUtility();
 		HashMap<String,Integer> hm= new HashMap<String,Integer>();
 		hm.put("hello",12);
 		hm.put("hellboy",13);
 		hm.put("asdheat",15);
-		List<Word> output = PrinterUtility.sortWordsByRank(hm);
+		List<Word> result = PrinterUtility.sortWordsByRank(hm);
 		
 		List <Word> expetedOp=new ArrayList<Word>();
 		Word w= new Word("asdheat",15);
@@ -27,29 +28,9 @@ public class PrinterUtilityTest {
 		 expetedOp.add(w);
 		 w= new Word("hello",12);
 		 expetedOp.add(w);
-		assertEquals("Correct" ,output,expetedOp );
+		assertEquals("Correct" ,result.toString(),expetedOp.toString().toString() );
 		
 	}
 	
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
-	@Test
-	public void testSortWordsByRank() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testPrintWords() {
-		fail("Not yet implemented");
-	}
-
-}
-	}
-
+	
 }
