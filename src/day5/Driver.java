@@ -1,10 +1,12 @@
 package day5;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Driver {
 	public static void main(String []args) throws IOException {
 		Scrabble s = new Scrabble();
-		s.printWordSuggestions("abck", "b**k");
+		ArrayList<String> words = s.getScrabbleWordSuggestions("abck", "*");
+		System.out.println(words);
 	}
 }

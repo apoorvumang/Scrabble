@@ -3,10 +3,10 @@ package day5;
 import java.util.Map;
 import java.util.*;
 
-public class PrinterUtility {
+public class SortUtility {
 
 	
-	 public static List<Word> sortWordsByRank(Map<String,Integer> wordsMap){
+	 public static ArrayList<String> sortWordsByRank(Map<String,Integer> wordsMap){
 		 
 		Set<String> keys = wordsMap.keySet();
 		List<Word> words=new ArrayList<Word>();
@@ -17,8 +17,12 @@ public class PrinterUtility {
 			
 		}
 		Collections.sort(words);
+		ArrayList <String> result = new ArrayList <String>();
+		for(Word word: words) {
+			result.add(word.value + " " + word.score);
+		}
 
-		 return words;
+		 return result;
 	 }
       public static void printWords(List<Word> sortedWWords,int limiter){
     	
