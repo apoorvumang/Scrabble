@@ -11,7 +11,6 @@ public class CombinationsTest {
 		Combinations c = new Combinations("a*b");
 		assertEquals("Size of combinations should be 107", 107, c.combinations.size() );
 		assertTrue("Must contain aOb", c.combinations.contains("aOb"));
-		assertTrue("Must contain Oab", c.combinations.contains("Oab"));
 		assertFalse("Must not contain abc",c.combinations.contains("abc"));
 	}
 
