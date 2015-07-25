@@ -9,9 +9,9 @@ public class FilterUtilityTest {
 	@Test
 	public void scrabbleTest() {
 		FilterUtility checkRegularExpression = new FilterUtility();
-		boolean ifRegexCombinationMatch=checkRegularExpression.matchUserRequest("z*.ba","zumba");
+		boolean ifRegexCombinationMatch=checkRegularExpression.matchRegex("z*.ba","zumba");
 		assertTrue("Correct",ifRegexCombinationMatch);
-		boolean ifRegexStarMatch=checkRegularExpression.matchUserRequest("z*mba","zumba");
+		boolean ifRegexStarMatch=checkRegularExpression.matchRegex("z*mba","zumba");
 		assertTrue("Correct",ifRegexStarMatch);
 	}
 	

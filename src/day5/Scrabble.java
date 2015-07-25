@@ -16,7 +16,7 @@ public class Scrabble {
 	}
 	String input = args[0];
 	String constraint = args[1];
-	input = ScrabbleWords.constructInput(input, constraint);
+	input = constructInput(input, constraint);
     ScrabbleWords scrabbleHelper = new ScrabbleWords();
     Scrabble scrabble = new Scrabble();
     Combinations c = new Combinations(input);
@@ -24,7 +24,7 @@ public class Scrabble {
     	if(scrabbleHelper.isValidWord(combination)) {
     		int score = ScrabbleWordScorer.calculateScore(combination);
     		for (String possibleWord: scrabbleHelper.getAllAnagrams(combination)) {
-    			if (FilterUtility.matchUserRequest(constraint, possibleWord)) {
+    			if (FilterUtility.matchRegex(constraint, possibleWord)) {
     				scrabble.wordsWithScore.put(possibleWord, score);
     			}
     		}
@@ -36,4 +36,12 @@ public class Scrabble {
   Scrabble() {
 	  wordsWithScore = new HashMap<String, Integer>();
   }
+  
+  public static String constructInput(String input, String constraint) {
+		for(Character c : constraint.toCharArray()) {
+			if(c >= 'a' && c <= 'z')
+				input += c;
+		}
+		return input;
+	}
 }

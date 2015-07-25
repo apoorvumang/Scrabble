@@ -36,7 +36,7 @@ public static Map<String,Integer> filterwordsWithRegex( HashMap<String,Integer> 
      Map<String,Integer> filteredResultMap= new HashMap<String,Integer>();
      Set<String> wordsSet =mapOfPossibleWordsWithScores.keySet();
 	 for(String word:wordsSet ){
-	     if(matchUserRequest(regex,word)){
+	     if(matchRegex(regex,word)){
 		 filteredResultMap.put(word,mapOfPossibleWordsWithScores.get(word));
 		 }
 	    
@@ -50,7 +50,7 @@ return filteredResultMap;
 
 
 
-public static boolean matchUserRequest(String regx, String candidate) {
+public static boolean matchRegex(String regx, String candidate) {
 		if (regx.isEmpty()) {
 			return false;
 		} else {
@@ -72,7 +72,7 @@ public static boolean matchUserRequest(String regx, String candidate) {
 				}
 
 				else {
-					return matchUserRequest(regx.substring(1),
+					return matchRegex(regx.substring(1),
 							candidate.substring(1));
 				}
 			} else {
@@ -83,7 +83,7 @@ public static boolean matchUserRequest(String regx, String candidate) {
 
 	private static boolean matchStar(String regx, String candidate) {
 		for (int i = 0; i < candidate.length(); i++) {
-			if (matchUserRequest(regx, candidate.substring(i))) {
+			if (matchRegex(regx, candidate.substring(i))) {
 				return true;
 			} else {
 				continue;
