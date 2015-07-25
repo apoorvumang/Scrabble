@@ -35,9 +35,10 @@ class ScrabbleHelper
 	}
 	
 	
-	ScrabbleHelper() throws IOException
+	ScrabbleHelper()
 	{	
 		anagramMap = new HashMap<String, AnagramListStructure>();
+		try {
 		File file = new File("C:\\sowpods.txt");
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		String word = br.readLine();
@@ -55,6 +56,11 @@ class ScrabbleHelper
 			word = br.readLine();
 		}
 		br.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	public String calculateKey(String word)

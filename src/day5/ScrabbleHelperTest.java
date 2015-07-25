@@ -1,5 +1,7 @@
+package day5;
 import static org.junit.Assert.*;
-import org.junit.day5;
+
+import org.junit.Test;
 
 public class ScrabbleHelperTest {
 
@@ -35,7 +37,7 @@ public class ScrabbleHelperTest {
 	public void scoreTest() {
 		ScrabbleHelper list = new ScrabbleHelper();
 		int score = list.calculateScore("zumba");
-		assertEquals("Correct", 18, score);
+		assertEquals("Correct", 17, score);
 		int s=list.calculateScore("radhika");
 		assertEquals("Correct",15,s);
 	}
