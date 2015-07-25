@@ -29,8 +29,8 @@ FilterUtility
 	boolean x = matchUserRequest("c*t", "cant") //will be true
 
 PrinterUtility
-	1. sortWordsByRank
-	2. printWords
+	1. List<String> sortWordsByRank (HashMap <String, Integer>)
+	2. void printWords(List<String>, int maxToPrint)
 
 Scrabble -> Combines all these to perform given task
 
