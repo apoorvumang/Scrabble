@@ -1,0 +1,36 @@
+AnagramListStructure
+	int score;
+	List <String> words;
+
+ScrabbleHelper
+	1. creates anagramList -> HashMap <String, AnagramListStructure> from sowpods.txt 
+	2. isValidWord(String word)
+	3. calculateScore(String word)
+	
+	Usage:
+	ScrabbleHelper sh = new ScrabbleHelper()  (reads sowpods.txt and populates its hashmap)
+	bool x = isValidWord("hello");
+	int x = calculateScore("hello");
+	
+Combinations
+	1. Creates all combinations given a rack. Expands blank tiles as well
+	2. c.combinations - stores combinations as arrayList
+	
+	Usage:
+	Combinations c = new Combinations("abc")
+	for (combination : c.combinations) {
+	//iterate
+	}
+	
+FilterUtility
+	1. boolean matchUserRequest(String regex, String word)
+
+	Usage:
+	boolean x = matchUserRequest("c*t", "cant") //will be true
+
+PrinterUtility
+	1. sortWordsByRank
+	2. printWords
+
+Scrabble -> Combines all these to perform given task
+
