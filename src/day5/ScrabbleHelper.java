@@ -19,7 +19,7 @@ class ScrabbleHelper
     	return anagramMap.containsKey(calculateKey(word.toLowerCase()));
     }
 	
-	public List<String> getAnagramList(String word) {
+	public List<String> getAllAnagrams(String word) {
 		return anagramMap.get(calculateKey(word.toLowerCase())).anagramList;
 	}
     

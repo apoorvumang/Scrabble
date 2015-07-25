@@ -23,7 +23,7 @@ public class Scrabble {
     for(String combination: c.combinations) {
     	if(scrabbleHelper.isValidWord(combination)) {
     		int score = ScrabbleHelper.calculateScore(combination);
-    		for (String possibleWord: scrabbleHelper.getAnagramList(combination)) {
+    		for (String possibleWord: scrabbleHelper.getAllAnagrams(combination)) {
     			if (FilterUtility.matchUserRequest(constraint, possibleWord)) {
     				scrabble.wordsWithScore.put(possibleWord, score);
     			}

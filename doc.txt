@@ -6,11 +6,13 @@ ScrabbleHelper
 	1. creates anagramList -> HashMap <String, AnagramListStructure> from sowpods.txt 
 	2. isValidWord(String word)
 	3. calculateScore(String word)
+	4. getAllAnagrams (String word)
 	
 	Usage:
 	ScrabbleHelper sh = new ScrabbleHelper()  (reads sowpods.txt and populates its hashmap)
 	bool x = isValidWord("hello");
 	int x = calculateScore("hello");
+	List <String> words = getAllAnagrams("hello")
 	
 Combinations
 	1. Creates all combinations given a rack. Expands blank tiles as well
