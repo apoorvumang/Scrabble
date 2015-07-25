@@ -21,7 +21,7 @@ Combinations
 	Usage:
 	Combinations c = new Combinations("abc")
 	for (combination : c.combinations) {
-	//iterate
+		//iterate
 	}
 	
 FilterUtility
