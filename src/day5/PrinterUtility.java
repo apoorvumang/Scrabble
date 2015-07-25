@@ -37,7 +37,11 @@ class Word implements Comparable<Word>
 	String value;
 	int score;
 
-	
+	 @Override 
+	 public String toString() {
+		 //System.out.println("im here");
+		return this.value+" "+this.score;
+	}
 	public Word(String value, int score)
 	{
 		this.value = value;
