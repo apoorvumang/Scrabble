@@ -16,13 +16,13 @@ public class Scrabble {
 	}
 	String input = args[0];
 	String constraint = args[1];
-	input = ScrabbleHelper.constructInput(input, constraint);
-    ScrabbleHelper scrabbleHelper = new ScrabbleHelper();
+	input = ScrabbleWords.constructInput(input, constraint);
+    ScrabbleWords scrabbleHelper = new ScrabbleWords();
     Scrabble scrabble = new Scrabble();
     Combinations c = new Combinations(input);
     for(String combination: c.combinations) {
     	if(scrabbleHelper.isValidWord(combination)) {
-    		int score = ScrabbleHelper.calculateScore(combination);
+    		int score = ScrabbleWordScorer.calculateScore(combination);
     		for (String possibleWord: scrabbleHelper.getAllAnagrams(combination)) {
     			if (FilterUtility.matchUserRequest(constraint, possibleWord)) {
     				scrabble.wordsWithScore.put(possibleWord, score);

@@ -10,7 +10,7 @@ class AnagramListStructure{
     	
 	AnagramListStructure(String word)
 	{
-		score = ScrabbleHelper.calculateScore(word);
+		score = ScrabbleWordScorer.calculateScore(word);
 		anagramList = new ArrayList<String>();
 		anagramList.add(word);
 	}
