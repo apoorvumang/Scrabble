@@ -22,10 +22,11 @@ public class FilterUtility
 		
 	 Map<String,Integer> retMap=	filterwordsWithRegex(hm,"*");
 	 
-    
-     
-     List<Word> words = PrinterUtility.sortWordsByRank(retMap);
-     PrinterUtility.printWords(words);
+
+//     
+//     List<Word> words = PrinterUtility.sortWordsByRank(retMap);
+//     PrinterUtility.printWords(words);
+
      
 	}
 	

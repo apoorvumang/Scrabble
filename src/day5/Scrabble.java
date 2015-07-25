@@ -5,12 +5,17 @@ import java.io.*;
 
 public class Scrabble {
 
-  public TreeMap<Integer, String> wordsWithScore;
+  public HashMap<String, Integer> wordsWithScore;
 
   public static void main(String[] args) throws IOException
   {
-	String input = "tap";
-	String constraint = "*c*";
+	
+	if(args.length != 2) {
+		System.out.println("Give rack and constraint as input");
+		System.exit(1);
+	}
+	String input = args[0];
+	String constraint = args[1];
 	input = ScrabbleHelper.constructInput(input, constraint);
     ScrabbleHelper scrabbleHelper = new ScrabbleHelper();
     Scrabble scrabble = new Scrabble();
@@ -18,18 +23,17 @@ public class Scrabble {
     for(String combination: c.combinations) {
     	if(scrabbleHelper.isValidWord(combination)) {
     		int score = ScrabbleHelper.calculateScore(combination);
-    		String concatenatedString = new String();
     		for (String possibleWord: scrabbleHelper.getAnagramList(combination)) {
-    			if (FilterUtility.matchUserRequest(constraint, possibleWord))
-    				concatenatedString += " " + possibleWord;
+    			if (FilterUtility.matchUserRequest(constraint, possibleWord)) {
+    				scrabble.wordsWithScore.put(possibleWord, score);
+    			}
     		}
-    		if(concatenatedString.length() > 0)
-    			scrabble.wordsWithScore.put(score, concatenatedString);
     	}
     }
-    System.out.println(scrabble.wordsWithScore.descendingMap());
+ 	List<Word> words = PrinterUtility.sortWordsByRank(scrabble.wordsWithScore);
+ 	PrinterUtility.printWords(words, 10);
   }
   Scrabble() {
-	  wordsWithScore = new TreeMap<Integer, String>();
+	  wordsWithScore = new HashMap<String, Integer>();
   }
 }
