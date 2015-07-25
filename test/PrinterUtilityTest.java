@@ -1,20 +1,4 @@
-import static org.junit.Assert.*;
-
-import org.junit.Test;
-
-
-public class PrinterUtilityTest {
-
-
-	public void printTest() { 
-		PrinterUtility testcase = new PrinterUtility () ;
-		
-		
-		String sortedWord=scrabble.calculateKey("zumba");
-		assertEquals("Correct", "abmuz", sortedWord);
-		String sortedWordnext=scrabble.calculateKey("radhika");
-		assertEquals("Correct","aadhikr",sortedWordnext);
-	package day5;
+package day5;
 
 import static org.junit.Assert.*;
 
