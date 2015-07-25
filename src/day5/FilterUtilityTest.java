@@ -1,5 +1,8 @@
+package day5;
+
 import static org.junit.Assert.*;
-import org.junit.day5;
+
+import org.junit.Test;
 
 public class FilterUtilityTest {
 
@@ -8,7 +11,8 @@ public class FilterUtilityTest {
 		FilterUtility checkRegularExpression = new FilterUtility();
 		boolean ifRegexCombinationMatch=checkRegularExpression.matchUserRequest("z*.ba","zumba");
 		assertTrue("Correct",ifRegexCombinationMatch);
-		boolean ifRegexStarMatch=checkRegularExpression.matchStar("z*mba","zumba");
+		boolean ifRegexStarMatch=checkRegularExpression.matchUserRequest("z*mba","zumba");
 		assertTrue("Correct",ifRegexStarMatch);
 	}
 	
+}
