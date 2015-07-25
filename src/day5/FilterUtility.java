@@ -51,6 +51,8 @@ return filteredResultMap;
 
 
 public static boolean matchRegex(String regx, String candidate) {
+		if(regx.isEmpty())
+			regx = "*";
 		if (regx.isEmpty()) {
 			return false;
 		} else {

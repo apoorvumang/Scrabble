@@ -14,7 +14,7 @@ public class Scrabble {
 	  scrabbleWords = new ScrabbleWords();
   }
 
-  public ArrayList<String> getScrabbleWordSuggestions(String rack, String constraint) throws IOException
+  public ArrayList<String> getScrabbleWordSuggestions(String rack, String constraint)
   {
 	String input = constructInput(rack, constraint);
     Combinations c = new Combinations(input);

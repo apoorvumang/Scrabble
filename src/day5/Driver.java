@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Driver {
-	public static void main(String []args) throws IOException {
+	public static void main(String []args) {
 		Scrabble s = new Scrabble();
-		ArrayList<String> words = s.getScrabbleWordSuggestions("abck", "*");
+		ArrayList<String> words = s.getScrabbleWordSuggestions("abck", "");
 		System.out.println(words);
 	}
 }
